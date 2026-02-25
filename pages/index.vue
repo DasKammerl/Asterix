@@ -75,13 +75,37 @@
       <section id="highlights" class="py-16 sm:py-20">
         <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
           <div class="rounded-3xl border border-primary/20 bg-white p-6 shadow-md sm:p-8">
-            <p class="text-xs font-bold uppercase tracking-[0.2em] text-accentdark">Highlights</p>
-            <h2 class="mt-3 text-3xl font-bold text-dark sm:text-4xl">Was dich bei uns erwartet</h2>
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-accentdark">Ablauf</p>
+            <h2 class="mt-3 text-3xl font-bold text-dark sm:text-4xl">So funktioniert dein Zugang</h2>
             <div class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-              <article class="motion-card rounded-2xl border border-primary/15 bg-altbg p-5 hover:border-primary/40 hover:shadow-primary/20"><p class="text-xs font-bold text-accentdark">01</p><h3 class="mt-2 text-xl font-bold text-dark">Einfache Preise</h3><p class="mt-2 text-sm text-muted">Tageskarte, Monatskarte und Jahreskarte ohne komplizierte Stundenmodelle.</p></article>
-              <article class="motion-card rounded-2xl border border-primary/15 bg-altbg p-5 hover:border-primary/40 hover:shadow-primary/20"><p class="text-xs font-bold text-accentdark">02</p><h3 class="mt-2 text-xl font-bold text-dark">Fairer Zugang</h3><p class="mt-2 text-sm text-muted">Session-basiertes System f�r klare und transparente Nutzung.</p></article>
-              <article class="motion-card rounded-2xl border border-primary/15 bg-altbg p-5 hover:border-primary/40 hover:shadow-primary/20"><p class="text-xs font-bold text-accentdark">03</p><h3 class="mt-2 text-xl font-bold text-dark">Zentrale Lage</h3><p class="mt-2 text-sm text-muted">Standort: Bewegungsgarage, Am Bahnhof 8.</p></article>
-              <article class="motion-card rounded-2xl border border-primary/15 bg-altbg p-5 hover:border-primary/40 hover:shadow-primary/20"><p class="text-xs font-bold text-accentdark">04</p><h3 class="mt-2 text-xl font-bold text-dark">Community Fokus</h3><p class="mt-2 text-sm text-muted">Bouldern f�r Einsteiger und Fortgeschrittene in angenehmer Atmosph�re.</p></article>
+              <article class="motion-card rounded-2xl border border-primary/15 bg-altbg p-5 hover:border-primary/40 hover:shadow-primary/20">
+                <p class="text-xs font-bold text-accentdark">01</p>
+                <h3 class="mt-2 text-xl font-bold text-dark">App herunterladen</h3>
+                <p class="mt-2 text-sm text-muted">
+                  Lade dir unsere App herunter und registriere dich in wenigen Minuten. Ein Benutzerkonto genügt für den gesamten Zugang.
+                </p>
+              </article>
+              <article class="motion-card rounded-2xl border border-primary/15 bg-altbg p-5 hover:border-primary/40 hover:shadow-primary/20">
+                <p class="text-xs font-bold text-accentdark">02</p>
+                <h3 class="mt-2 text-xl font-bold text-dark">Abo oder Karte auswählen</h3>
+                <p class="mt-2 text-sm text-muted">
+                  Wähle deine Tageskarte, Monatskarte oder Jahreskarte direkt in der App. Bezahlung erfolgt digital und transparent.
+                </p>
+              </article>
+              <article class="motion-card rounded-2xl border border-primary/15 bg-altbg p-5 hover:border-primary/40 hover:shadow-primary/20">
+                <p class="text-xs font-bold text-accentdark">03</p>
+                <h3 class="mt-2 text-xl font-bold text-dark">Digital einchecken</h3>
+                <p class="mt-2 text-sm text-muted">
+                  Vor Ort Öffnest du die App und zeigst deine digitale Zugangskarte am Eingang vor. Dein Zugang wird sofort geprüft und freigeschaltet.
+                </p>
+              </article>
+              <article class="motion-card rounded-2xl border border-primary/15 bg-altbg p-5 hover:border-primary/40 hover:shadow-primary/20">
+                <p class="text-xs font-bold text-accentdark">04</p>
+                <h3 class="mt-2 text-xl font-bold text-dark">Reinkommen &amp; bouldern</h3>
+                <p class="mt-2 text-sm text-muted">
+                  Nach erfolgreicher Freigabe Öffnet sich der Zugang. Du kannst direkt starten - unkompliziert und flexibel.
+                </p>
+              </article>
             </div>
           </div>
         </div>
@@ -98,7 +122,7 @@
       <section id="anyquestions" class="bg-altbg py-16 sm:py-20">
         <div class="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
           <p class="text-xs font-bold uppercase tracking-[0.2em] text-accentdark">FAQ</p>
-          <h2 class="mt-3 text-3xl font-bold text-dark sm:text-4xl">Häufige Fragen</h2>
+          <h2 class="mt-3 text-3xl font-bold text-dark sm:text-4xl">H�ufige Fragen</h2>
           <div class="mt-8 space-y-3">
             <details class="rounded-2xl border border-primary/20 bg-white p-4 shadow-sm"><summary class="cursor-pointer font-semibold text-dark">Brauche ich Vorerfahrung?</summary><p class="mt-2 text-sm text-muted">Nein, bei uns sind Einsteiger und Fortgeschrittene willkommen.</p></details>
             <details class="rounded-2xl border border-primary/20 bg-white p-4 shadow-sm"><summary class="cursor-pointer font-semibold text-dark">Gibt es eine Stundenkarte?</summary><p class="mt-2 text-sm text-muted">Wir bieten stattdessen eine Tageskarte sowie Monats- und Jahreskarten an.</p></details>
