@@ -1,77 +1,60 @@
 # Das Kammerl – Website (Nuxt)
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Website für **Das Kammerl** (Boulderhalle Wieselburg, [daskammerl.at](https://daskammerl.at)).  
+Technik: **Nuxt 4**, statischer Build, Deploy per FTP.
 
-**Neue Entwickler:** Siehe **[docs/SETUP-DEV.md](docs/SETUP-DEV.md)** für Klonen, Install, Pushen und Deploy.
+---
 
-## Setup
-
-Make sure to install dependencies:
+## Schnellstart
 
 ```bash
-# npm
+# Abhängigkeiten installieren
 npm install
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+# Entwicklungsserver starten (http://localhost:3000)
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+Weitere Befehle: [Entwicklung & Build](#entwicklung--build) unten.
 
-Build the application for production:
+---
 
-```bash
-# npm
-npm run build
+## Dokumentation
 
-# pnpm
-pnpm build
+| Thema | Datei | Inhalt |
+|--------|--------|--------|
+| **Neue Entwickler** | [docs/SETUP-DEV.md](docs/SETUP-DEV.md) | Repo klonen, Remote anpassen, Branches, Pushen, Deploy starten |
+| **Deploy (FTP)** | [docs/DEPLOY-FTP.md](docs/DEPLOY-FTP.md) | GitHub Secrets, FTP-Daten, Deploy-Limit (max. 3 pro 24h), `npm run deploy` |
 
-# yarn
-yarn build
+---
 
-# bun
-bun run build
-```
+## Umgang mit dem Projekt
 
-Locally preview production build:
+### Entwicklung & Build
 
-```bash
-# npm
-npm run preview
+- **Lokal entwickeln:** `npm run dev` → Seite unter http://localhost:3000
+- **Produktions-Build testen:** `npm run build` dann `npm run preview`
+- **Statischen Build erzeugen (für Deploy):** `npm run generate` → Ausgabe in `.output/public/`
 
-# pnpm
-pnpm preview
+### Deploy
 
-# yarn
-yarn preview
+- Deploy läuft **nur manuell** (nicht bei jedem Push).
+- **Max. 3 Deploys pro 24 Stunden** (für alle Nutzer); danach schlägt der Workflow fehl.
+- Starten:
+  - **Konsole:** `npm run deploy` (von `main`) oder `npm run deploy -- develop` (siehe [DEPLOY-FTP.md](docs/DEPLOY-FTP.md)).
+  - **GitHub:** Actions → „Deploy to FTP“ → Run workflow, Branch wählen.
 
-# bun
-bun run preview
-```
+Details und Einrichtung (Secrets, FTP): [docs/DEPLOY-FTP.md](docs/DEPLOY-FTP.md).
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+### Für neue Teammitglieder
+
+1. [docs/SETUP-DEV.md](docs/SETUP-DEV.md) durchgehen (Klonen, Install, Pushen, Deploy).
+2. Bei bestehendem Klon nach Repo-Umzug: nur [Remote anpassen](docs/SETUP-DEV.md#repo-schon-geklont-nur-remote-anpassen-nach-umzug-in-die-organisation).
+
+---
+
+## Technik
+
+- [Nuxt](https://nuxt.com) 4, Vue 3
+- Statischer Export (`nuxt generate`), Upload per FTP (GitHub Actions)
+- Repo: [github.com/DasKammerl-Bouldern/Asterix](https://github.com/DasKammerl-Bouldern/Asterix)

@@ -18,6 +18,20 @@ jobs:
     timeout-minutes: 15
 
     steps:
+      - name: Deploy-Limit prüfen (max 3 pro 24h)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          CUTOFF=$(date -u -d '24 hours ago' +%Y-%m-%dT%H:%M:%SZ)
+          echo "Zähle erfolgreiche Deploys seit: $CUTOFF"
+          COUNT=$(gh run list --workflow deploy-ftp.yml --limit 50 --json conclusion,createdAt \
+            --jq "[.[] | select(.conclusion==\"success\" and .createdAt >= \"$CUTOFF\")] | length")
+          echo "Erfolgreiche Deploys in den letzten 24h: $COUNT (Limit: 3)"
+          if [ "$COUNT" -ge 3 ]; then
+            echo "::error::Deploy-Limit erreicht: Maximal 3 Deploys pro 24 Stunden. Bereits $COUNT Deploys."
+            exit 1
+          fi
+
       - name: Checkout
         uses: actions/checkout@v4
         with:

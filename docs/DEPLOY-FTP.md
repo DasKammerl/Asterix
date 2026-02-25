@@ -74,9 +74,10 @@ Dann wird nur dieser eine Lauf gestartet: Build von dem gewählten Branch und Up
 
 ## Ablauf im Workflow
 
-1. **Checkout:** Der gewählte Branch wird ausgecheckt.
-2. **Build:** `npm run generate` erzeugt die statische Website in `.output/public/`.
-3. **Upload:** Der Inhalt von `.output/public/` wird per FTP in das konfigurierte Server-Verzeichnis hochgeladen.
+1. **Deploy-Limit:** Es dürfen maximal **3 erfolgreiche Deploys pro 24 Stunden** laufen (rolling, für alle Nutzer). Wurde das Limit erreicht, schlägt der Workflow mit einer Fehlermeldung fehl und baut nicht.
+2. **Checkout:** Der gewählte Branch wird ausgecheckt.
+3. **Build:** `npm run generate` erzeugt die statische Website in `.output/public/`.
+4. **Upload:** Der Inhalt von `.output/public/` wird per FTP in das konfigurierte Server-Verzeichnis hochgeladen.
 
 ## Was du brauchst (GitHub Secrets)
 
