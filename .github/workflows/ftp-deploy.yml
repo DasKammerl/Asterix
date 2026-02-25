@@ -3,7 +3,7 @@
 name: Build & Deploy to FTP
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # manuell per "Run workflow" oder: npm run deploy
     inputs:
       branch:
         description: "Branch, von dem deployed werden soll (z.B. main, develop)"

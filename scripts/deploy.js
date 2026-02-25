@@ -12,11 +12,10 @@
 import { execSync } from 'child_process';
 
 const branch = process.argv[2] || process.env.DEPLOY_BRANCH || 'main';
-const workflowFile = 'ftp-deploy.yml';
 
 try {
   execSync(
-    `gh workflow run "${workflowFile}" --ref main -f branch=${branch}`,
+    `gh workflow run "Build & Deploy to FTP" --ref main -f branch=${branch}`,
     { stdio: 'inherit' }
   );
   console.log(`\n✅ Deploy gestartet für Branch: ${branch}`);
