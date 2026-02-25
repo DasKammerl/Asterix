@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div>
     <Navbar />
     <main class="bg-background py-16 sm:py-20">
@@ -11,7 +11,7 @@
             und zur Bearbeitung von Kontakt- und Formularanfragen.
           </p>
           <p class="mt-4 text-muted">
-            Bei Fragen zum Datenschutz erreichst du uns unter: <span class="font-semibold text-dark">hello@daskammerl.at</span>
+            Bei Fragen zum Datenschutz erreichst du uns unter: <span class="font-semibold text-dark">servus@daskammerl.at</span>
           </p>
         </div>
       </div>

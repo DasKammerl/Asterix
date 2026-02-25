@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <section id="kontakt" class="bg-background py-16 sm:py-20">
     <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
       <div class="mb-8">
@@ -15,7 +15,7 @@
             Wieselburg
           </p>
           <p class="mt-4 text-sm text-muted"><strong class="text-dark">Telefon:</strong> +43 000 000000</p>
-          <p class="mt-1 text-sm text-muted"><strong class="text-dark">E-Mail:</strong> hello@daskammerl.at</p>
+          <p class="mt-1 text-sm text-muted"><strong class="text-dark">E-Mail:</strong> servus@daskammerl.at</p>
           <p class="mt-1 text-sm text-muted">
             <strong class="text-dark">Website:</strong>
             <a href="https://daskammerl.at" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-accentdark">

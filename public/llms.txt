@@ -18,4 +18,4 @@ daskammerl (Das Kammerl) ist eine Boulderhalle in Wieselburg. Die Website enthae
 - Datenschutz: https://daskammerl.at/datenschutz
 
 ## Kontakt
-E-Mail: hello@daskammerl.at
+E-Mail: servus@daskammerl.at

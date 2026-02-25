@@ -1,4 +1,4 @@
-ï»¿<template>
+<template>
   <div>
     <Navbar />
 
@@ -9,8 +9,8 @@
             <p class="text-xs font-bold uppercase tracking-[0.2em] text-accentdark">Das Kammerl | Bouldern</p>
             <h1 class="mt-3 text-4xl font-extrabold leading-tight text-dark sm:text-5xl">Bouldern in Wieselburg.</h1>
             <p class="mt-4 max-w-xl text-base text-muted sm:text-lg">
-              Alle wichtigen Besucherinfos auf einen Blick: Preise, Standort, Ã–ffnungszeiten und Antworten
-              auf hÃ¤ufige Fragen.
+              Alle wichtigen Besucherinfos auf einen Blick: Preise, Standort, Öffnungszeiten und Antworten
+              auf häufige Fragen.
             </p>
             <p class="mt-2 max-w-xl text-sm text-muted">
               daskammerl ist die Marke von Das Kammerl unter <span class="font-semibold">daskammerl.at</span>.
@@ -80,9 +80,9 @@
             <h2 class="mt-3 text-3xl font-bold text-dark sm:text-4xl">Was dich bei uns erwartet</h2>
             <div class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
               <article class="motion-card rounded-2xl border border-primary/15 bg-altbg p-5 hover:border-primary/40 hover:shadow-primary/20"><p class="text-xs font-bold text-accentdark">01</p><h3 class="mt-2 text-xl font-bold text-dark">Einfache Preise</h3><p class="mt-2 text-sm text-muted">Tageskarte, Monatskarte und Jahreskarte ohne komplizierte Stundenmodelle.</p></article>
-              <article class="motion-card rounded-2xl border border-primary/15 bg-altbg p-5 hover:border-primary/40 hover:shadow-primary/20"><p class="text-xs font-bold text-accentdark">02</p><h3 class="mt-2 text-xl font-bold text-dark">Fairer Zugang</h3><p class="mt-2 text-sm text-muted">Session-basiertes System fÃ¼r klare und transparente Nutzung.</p></article>
+              <article class="motion-card rounded-2xl border border-primary/15 bg-altbg p-5 hover:border-primary/40 hover:shadow-primary/20"><p class="text-xs font-bold text-accentdark">02</p><h3 class="mt-2 text-xl font-bold text-dark">Fairer Zugang</h3><p class="mt-2 text-sm text-muted">Session-basiertes System für klare und transparente Nutzung.</p></article>
               <article class="motion-card rounded-2xl border border-primary/15 bg-altbg p-5 hover:border-primary/40 hover:shadow-primary/20"><p class="text-xs font-bold text-accentdark">03</p><h3 class="mt-2 text-xl font-bold text-dark">Zentrale Lage</h3><p class="mt-2 text-sm text-muted">Standort: Bewegungsgarage, Am Bahnhof 8.</p></article>
-              <article class="motion-card rounded-2xl border border-primary/15 bg-altbg p-5 hover:border-primary/40 hover:shadow-primary/20"><p class="text-xs font-bold text-accentdark">04</p><h3 class="mt-2 text-xl font-bold text-dark">Community Fokus</h3><p class="mt-2 text-sm text-muted">Bouldern fÃ¼r Einsteiger und Fortgeschrittene in angenehmer AtmosphÃ¤re.</p></article>
+              <article class="motion-card rounded-2xl border border-primary/15 bg-altbg p-5 hover:border-primary/40 hover:shadow-primary/20"><p class="text-xs font-bold text-accentdark">04</p><h3 class="mt-2 text-xl font-bold text-dark">Community Fokus</h3><p class="mt-2 text-sm text-muted">Bouldern für Einsteiger und Fortgeschrittene in angenehmer Atmosphäre.</p></article>
             </div>
           </div>
         </div>
@@ -99,7 +99,7 @@
       <section id="anyquestions" class="bg-altbg py-16 sm:py-20">
         <div class="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
           <p class="text-xs font-bold uppercase tracking-[0.2em] text-accentdark">FAQ</p>
-          <h2 class="mt-3 text-3xl font-bold text-dark sm:text-4xl">HÃ¤ufige Fragen</h2>
+          <h2 class="mt-3 text-3xl font-bold text-dark sm:text-4xl">Häufige Fragen</h2>
           <div class="mt-8 space-y-3">
             <details class="rounded-2xl border border-primary/20 bg-white p-4 shadow-sm"><summary class="cursor-pointer font-semibold text-dark">Brauche ich Vorerfahrung?</summary><p class="mt-2 text-sm text-muted">Nein, bei uns sind Einsteiger und Fortgeschrittene willkommen.</p></details>
             <details class="rounded-2xl border border-primary/20 bg-white p-4 shadow-sm"><summary class="cursor-pointer font-semibold text-dark">Gibt es eine Stundenkarte?</summary><p class="mt-2 text-sm text-muted">Wir bieten stattdessen eine Tageskarte sowie Monats- und Jahreskarten an.</p></details>
@@ -147,11 +147,11 @@
             <p class="text-xs font-bold uppercase tracking-[0.2em] text-accentdark">Waitlist</p>
             <h2 class="mt-3 text-3xl font-bold text-dark sm:text-4xl">Bleib auf dem Laufenden</h2>
             <p class="mt-3 text-muted">
-              Trag dich ein, wenn du Updates zu Start, Angeboten und freien PlÃ¤tzen bekommen willst.
+              Trag dich ein, wenn du Updates zu Start, Angeboten und freien Plätzen bekommen willst.
             </p>
           </div>
           <form
-            action="https://formsubmit.co/hello@daskammerl.at"
+            action="https://formsubmit.co/servus@daskammerl.at"
             method="POST"
             class="rounded-2xl border border-primary/20 bg-white p-6 shadow-md"
           >
@@ -197,7 +197,7 @@
 <script setup lang="ts">
 const heroImages = [
   // Startseiten Bilder'
-  { src: '/images/index_image_1.jpg', alt: 'Bouldern fÃ¼r alle Altersgruppen' },
+  { src: '/images/index_image_1.jpg', alt: 'Bouldern für alle Altersgruppen' },
   { src: '/images/index_image_2.jpg', alt: 'Abwechslungsreiche Routen' },
   { src: '/images/index_image_3.jpg', alt: 'Community Session am Abend' }
 ]

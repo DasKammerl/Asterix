@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div>
     <Navbar />
     <main class="bg-background py-16 sm:py-20">
@@ -9,7 +9,7 @@
           <p class="text-muted">Das Kammerl</p>
           <p class="mt-2 text-muted">Bewegungsgarage, Am Bahnhof 8</p>
           <p class="text-muted">Wieselburg</p>
-          <p class="mt-4 text-muted"><span class="font-semibold text-dark">E-Mail:</span> hello@daskammerl.at</p>
+          <p class="mt-4 text-muted"><span class="font-semibold text-dark">E-Mail:</span> servus@daskammerl.at</p>
           <p class="mt-4 text-sm text-muted">Verantwortlich fuer den Inhalt: Das Kammerl Team</p>
         </div>
       </div>
