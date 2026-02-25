@@ -1,6 +1,6 @@
 # Manueller Deploy: Build (Nuxt static) + Upload per FTP
-# Ausführen: Actions → "Build & Deploy to FTP" → Run workflow → Branch wählen → Run workflow
-name: Build & Deploy to FTP
+# Ausführen: Actions → "Build and Deploy to FTP" → Run workflow → Branch wählen → Run workflow
+name: Build and Deploy to FTP
 
 on:
   workflow_dispatch:  # manuell per "Run workflow" oder: npm run deploy

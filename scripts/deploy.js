@@ -15,7 +15,7 @@ const branch = process.argv[2] || process.env.DEPLOY_BRANCH || 'main';
 
 try {
   execSync(
-    `gh workflow run "Build & Deploy to FTP" --ref main -f branch=${branch}`,
+    `gh workflow run ftp-deploy.yml --ref main -f branch=${branch}`,
     { stdio: 'inherit' }
   );
   console.log(`\n✅ Deploy gestartet für Branch: ${branch}`);
