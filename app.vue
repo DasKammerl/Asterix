@@ -1,7 +1,11 @@
 <template>
-  <div class="pb-20 md:pb-0">
+  <div class="relative pb-20 md:pb-0">
+    <SplashScreen v-if="showSplash" @close="showSplash = false" />
+
+    <!-- Hauptinhalt -->
     <NuxtPage />
 
+    <!-- Mobile Bottom-Navigation -->
     <nav class="fixed inset-x-0 bottom-0 z-[60] border-t border-primary/20 bg-white/95 backdrop-blur md:hidden">
       <div class="mx-auto max-w-6xl px-2 py-2">
         <div class="grid grid-cols-5 gap-2">
@@ -23,6 +27,8 @@
 </template>
 
 <script setup lang="ts">
+const showSplash = ref(true)
+
 const route = useRoute()
 const mobileNavItems = [
   { to: '/', label: 'Home' },

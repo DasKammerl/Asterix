@@ -1,6 +1,8 @@
-# Nuxt Minimal Starter
+# Das Kammerl – Website (Nuxt)
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+
+**Neue Entwickler:** Siehe **[docs/SETUP-DEV.md](docs/SETUP-DEV.md)** für Klonen, Install, Pushen und Deploy.
 
 ## Setup
 
