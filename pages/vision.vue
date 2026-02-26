@@ -3,6 +3,13 @@
     <Navbar />
     <main class="bg-background">
       <VisionIntroSection />
+      <SectionDivider />
+      <VisionBackgroundSection />
+      <SectionDivider />
+      <VisionWhySection />
+      <SectionDivider />
+      <VisionTargetSection />
+      <SectionDivider />
       <VisionPillarsSection />
       <VisionFaqSection />
     </main>

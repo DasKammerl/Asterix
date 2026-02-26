@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <header class="sticky top-0 z-50 border-b border-primary/15 bg-background/90 backdrop-blur">
     <div class="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
       <NuxtLink to="/" class="group ml-3 flex items-center gap-3">
@@ -24,7 +24,7 @@
         rel="noopener noreferrer"
         class="rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-accentdark"
       >
-        Sponsoring
+        Sponsor werden
       </a>
     </div>
   </header>

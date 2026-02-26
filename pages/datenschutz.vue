@@ -11,6 +11,6 @@
 <script setup lang="ts">
 usePageSeo({
   title: 'Datenschutz',
-  description: 'Datenschutzhinweise der Website daskammerl.at.'
+  description: 'Datenschutzerklärung – Verarbeitung personenbezogener Daten, Rechte und Kontakt.'
 })
 </script>

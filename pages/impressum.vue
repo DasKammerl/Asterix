@@ -11,6 +11,6 @@
 <script setup lang="ts">
 usePageSeo({
   title: 'Impressum',
-  description: 'Impressum der Website daskammerl.at.'
+  description: 'Impressum und rechtliche Angaben – Das Kammerl, Bewegungsgarage Wieselburg.'
 })
 </script>
