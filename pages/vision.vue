@@ -19,8 +19,9 @@
 
 <script setup lang="ts">
 usePageSeo({
-  title: 'Vision Boulderhalle Wieselburg',
+  title: 'Vision – Das Kammerl',
   description:
-    'Vision der Boulderhalle Das Kammerl in Wieselburg: Erlebnis, Training und Gemeinschaft für alle Levels.'
+    'Vision und Hintergrund des Kammerl: Boulderhalle Wieselburg ohne Personalbetrieb, digitaler Zutritt per App, Zielgruppe und Partnerschaften.',
+  keywords: 'Kammerl Vision, Boulderhalle Wieselburg Konzept, Das Kammerl Projekt'
 })
 </script>

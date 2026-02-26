@@ -49,21 +49,26 @@ const {
 const ogImageUrl = new URL(defaultOgImage, siteUrl).toString()
 const organizationSchema = {
   '@context': 'https://schema.org',
-  '@type': ['LocalBusiness', 'SportsActivityLocation'],
+  '@type': ['SportsActivityLocation', 'LocalBusiness'],
   '@id': `${siteUrl}/#organization`,
   name: siteName,
-  alternateName: ['daskammerl', 'daskammerl.at', 'Das Kammerl Boulderhalle'],
+  alternateName: ['Kammerl', 'Das Kammerl', 'daskammerl', 'daskammerl.at', 'Das Kammerl Boulderhalle', 'Kammerl Bouldern', 'Boulderhalle Wieselburg'],
+  description: 'Das Kammerl – Boulderhalle in Wieselburg. Bouldern 24/7, Zutritt per Keycard-App. Tages-, Monats- und Jahreskarten.',
   url: siteUrl,
   email: 'servus@daskammerl.at',
-  brand: {
-    '@type': 'Brand',
-    name: 'daskammerl'
-  },
+  brand: { '@type': 'Brand', name: 'Das Kammerl' },
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Am Bahnhof 8',
     addressLocality: 'Wieselburg',
+    postalCode: '3250',
     addressCountry: 'AT'
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    opens: '00:00',
+    closes: '23:59'
   },
   sameAs: [siteUrl]
 }
@@ -72,12 +77,11 @@ const websiteSchema = {
   '@type': 'WebSite',
   '@id': `${siteUrl}/#website`,
   name: siteName,
-  alternateName: ['daskammerl', 'daskammerl.at'],
+  alternateName: ['Kammerl', 'Das Kammerl', 'daskammerl', 'daskammerl.at'],
   url: siteUrl,
   inLanguage: 'de-AT',
-  publisher: {
-    '@id': `${siteUrl}/#organization`
-  }
+  description: 'Das Kammerl – Boulderhalle Wieselburg. Kammerl Bouldern 24/7, Preise, Standort, Vision.',
+  publisher: { '@id': `${siteUrl}/#organization` }
 }
 
 useSeoMeta({

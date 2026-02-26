@@ -4,7 +4,11 @@ type UsePageSeoOptions = {
   path?: string
   image?: string
   type?: 'website' | 'article'
+  /** Zusätzliche Suchbegriffe für diese Seite (z. B. Kammerl Bouldern, Boulderhalle Wieselburg) */
+  keywords?: string
 }
+
+const defaultKeywords = 'Das Kammerl, Kammerl, Kammerl Bouldern, Boulderhalle Wieselburg, Bouldern Wieselburg, daskammerl.at'
 
 export const usePageSeo = (options: UsePageSeoOptions) => {
   const route = useRoute()
@@ -16,9 +20,13 @@ export const usePageSeo = (options: UsePageSeoOptions) => {
   const canonical = new URL(targetPath, siteUrl).toString()
   const image = new URL(options.image ?? defaultOgImage, siteUrl).toString()
   const title = `${options.title} | ${siteName}`
+  const keywords = options.keywords ? `${defaultKeywords}, ${options.keywords}` : defaultKeywords
 
   useHead({
     title: options.title,
+    meta: [
+      { name: 'keywords', content: keywords }
+    ],
     link: [
       { rel: 'canonical', href: canonical },
       { rel: 'alternate', hreflang: siteLanguage, href: canonical }
@@ -28,12 +36,14 @@ export const usePageSeo = (options: UsePageSeoOptions) => {
   useSeoMeta({
     title,
     description: options.description,
-    keywords: `daskammerl, Das Kammerl, daskammerl.at, Boulderhalle Wieselburg, Bouldern Wieselburg`,
     ogTitle: title,
     ogDescription: options.description,
     ogType: options.type ?? 'website',
     ogUrl: canonical,
     ogImage: image,
+    ogImageWidth: 1200,
+    ogImageHeight: 630,
+    ogLocale: 'de_AT',
     twitterTitle: title,
     twitterDescription: options.description,
     twitterCard: 'summary_large_image',

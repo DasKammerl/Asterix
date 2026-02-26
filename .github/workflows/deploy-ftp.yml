@@ -18,6 +18,11 @@ jobs:
     timeout-minutes: 15
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch || 'main' }}
+
       - name: Deploy-Limit prüfen (max 3 pro 24h)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -31,11 +36,6 @@ jobs:
             echo "::error::Deploy-Limit erreicht: Maximal 3 Deploys pro 24 Stunden. Bereits $COUNT Deploys."
             exit 1
           fi
-
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.inputs.branch || 'main' }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

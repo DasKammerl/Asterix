@@ -20,7 +20,7 @@ export default defineNuxtConfig({
       siteUrl: 'https://daskammerl.at',
       siteLanguage: 'de-AT',
       defaultSeoDescription:
-        'Das Kammerl ist die Boulderhalle in Wieselburg mit Kursen, Community und modernen Boulderbereichen für alle Levels.',
+        'Das Kammerl – Boulderhalle Wieselburg. Kammerl Bouldern 24/7, Zutritt per Keycard-App. Preise, Anfahrt, Vision.',
       defaultOgImage: '/images/index_image_1.jpg'
     }
   },
@@ -46,7 +46,7 @@ export default defineNuxtConfig({
         { name: 'application-name', content: 'daskammerl' },
         { name: 'apple-mobile-web-app-title', content: 'daskammerl' },
         { name: 'generator', content: 'Nuxt' },
-        { name: 'keywords', content: 'daskammerl, Das Kammerl, daskammerl.at, Boulderhalle Wieselburg, Bouldern' },
+        { name: 'keywords', content: 'Das Kammerl, Kammerl, Kammerl Bouldern, Boulderhalle Wieselburg, Bouldern Wieselburg, daskammerl, daskammerl.at, Bewegungsgarage Wieselburg, Kletterhalle Wieselburg' },
         { name: 'theme-color', content: '#1E3A5F' },
         { name: 'author', content: 'Das Kammerl' },
         { name: 'format-detection', content: 'telephone=no' },

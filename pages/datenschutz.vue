@@ -11,6 +11,7 @@
 <script setup lang="ts">
 usePageSeo({
   title: 'Datenschutz',
-  description: 'Datenschutzerklärung – Verarbeitung personenbezogener Daten, Rechte und Kontakt.'
+  description: 'Datenschutz Das Kammerl – Boulderhalle Wieselburg. Informationen zur Datenverarbeitung, DSGVO, Ihre Rechte.',
+  keywords: 'Das Kammerl Datenschutz'
 })
 </script>

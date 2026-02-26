@@ -10,8 +10,9 @@
 
 <script setup lang="ts">
 usePageSeo({
-  title: 'Preise Boulderhalle Wieselburg',
+  title: 'Preise – Das Kammerl Boulderhalle',
   description:
-    'Preise im Das Kammerl Wieselburg: Tageskarte, Monatskarte und Jahreskarte mit einfacher, transparenter Tariflogik.'
+    'Preise Kammerl Bouldern: Tageskarte 24h, Monatskarte und Jahreskarte. Das Kammerl Wieselburg – 24/7 geöffnet, Zutritt per App.',
+  keywords: 'Kammerl Preise, Boulderhalle Preise Wieselburg, Tageskarte Bouldern'
 })
 </script>

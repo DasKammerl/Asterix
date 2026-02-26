@@ -26,17 +26,18 @@
 const heroIntro = 'Die Halle ist 24/7 geöffnet – du kommst mit der Keycard-App am Handy rein. Hier findest du Preise, Standort und Antworten auf häufige Fragen.'
 
 const heroImages = [
-  { src: '/images/index_image_1.jpg', alt: 'Bouldern für alle Altersgruppen' },
-  { src: '/images/index_image_2.jpg', alt: 'Abwechslungsreiche Routen' },
-  { src: '/images/index_image_3.jpg', alt: 'Community Session am Abend' }
+  { src: '/images/index_image_1.jpg', alt: 'Bouldern für alle Altersgruppen in der Boulderhalle Das Kammerl Wieselburg' },
+  { src: '/images/index_image_2.jpg', alt: 'Abwechslungsreiche Kletterrouten in der Boulderhalle Kammerl' },
+  { src: '/images/index_image_3.jpg', alt: 'Community und Session am Abend im Kammerl Wieselburg' }
 ]
 
 usePageSeo({
-  title: 'Boulderhalle Wieselburg',
+  title: 'Das Kammerl – Boulderhalle Wieselburg',
   description:
-    'Das Kammerl Boulderhalle in Wieselburg: 24/7 geöffnet, Zutritt per Keycard-App. Preise, Anfahrt, Vision und Sponsoring.',
+    'Kammerl Bouldern in Wieselburg: Das Kammerl ist die Boulderhalle 24/7 geöffnet, Zutritt per Keycard-App. Preise, Anfahrt, Vision.',
   path: '/',
-  image: '/images/index_image_1.jpg'
+  image: '/images/index_image_1.jpg',
+  keywords: 'Kammerl Bouldern, Boulderhalle Wieselburg, Das Kammerl Wieselburg'
 })
 
 const faqSchema = {
@@ -94,10 +95,29 @@ const faqSchema = {
   ]
 }
 
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': 'https://daskammerl.at/#webpage',
+  url: 'https://daskammerl.at/',
+  name: 'Das Kammerl – Boulderhalle Wieselburg | Kammerl Bouldern',
+  description: 'Kammerl Bouldern in Wieselburg: Das Kammerl ist die Boulderhalle 24/7 geöffnet, Zutritt per Keycard-App. Preise, Anfahrt, Vision.',
+  isPartOf: { '@id': 'https://daskammerl.at/#website' },
+  about: { '@id': 'https://daskammerl.at/#organization' },
+  primaryImageOfPage: {
+    '@type': 'ImageObject',
+    url: 'https://daskammerl.at/images/index_image_1.jpg',
+    description: 'Bouldern für alle Altersgruppen in der Boulderhalle Das Kammerl Wieselburg'
+  },
+  mainEntity: { '@id': 'https://daskammerl.at/#faq' }
+}
+
+const faqSchemaWithId = { ...faqSchema, '@id': 'https://daskammerl.at/#faq' }
+
 useHead({
-  script: [{
-    type: 'application/ld+json',
-    children: JSON.stringify(faqSchema)
-  }]
+  script: [
+    { type: 'application/ld+json', children: JSON.stringify(faqSchemaWithId) },
+    { type: 'application/ld+json', children: JSON.stringify(webPageSchema) }
+  ]
 })
 </script>

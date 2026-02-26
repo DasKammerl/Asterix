@@ -22,8 +22,9 @@
 
 <script setup lang="ts">
 usePageSeo({
-  title: 'Sponsor werden | Das Kammerl Wieselburg',
+  title: 'Sponsoren – Das Kammerl Boulderhalle',
   description:
-    'Sponsoring bei Das Kammerl Wieselburg: Mehrwert für Sponsoren, Partnerschaftsklassen von Supporter bis Namenssponsor und direkte Anfrage.'
+    'Sponsoring Kammerl Bouldern Wieselburg: Partnerschaftsklassen von Supporter bis Namenssponsor. Regionale Sichtbarkeit, langfristige Partnerschaften.',
+  keywords: 'Das Kammerl Sponsoring, Boulderhalle Wieselburg Sponsor'
 })
 </script>

@@ -11,6 +11,7 @@
 <script setup lang="ts">
 usePageSeo({
   title: 'Impressum',
-  description: 'Impressum und rechtliche Angaben – Das Kammerl, Bewegungsgarage Wieselburg.'
+  description: 'Impressum Das Kammerl – Boulderhalle Wieselburg. Rechtliche Angaben, Kontakt, Verantwortung für Inhalt.',
+  keywords: 'Das Kammerl Impressum'
 })
 </script>
