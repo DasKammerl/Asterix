@@ -10,12 +10,16 @@
         <span class="text-lg font-extrabold tracking-tight text-primary">Das Kammerl</span>
       </NuxtLink>
 
-      <nav class="hidden items-center gap-5 text-sm font-semibold lg:flex">
-        <NuxtLink to="/" class="motion-link text-dark hover:text-accentdark">Home</NuxtLink>
-        <NuxtLink to="/vision" class="motion-link text-dark hover:text-accentdark">Vision</NuxtLink>
-        <NuxtLink to="/price" class="motion-link text-dark hover:text-accentdark">Preise</NuxtLink>
-        <NuxtLink to="/location" class="motion-link text-dark hover:text-accentdark">Location</NuxtLink>
-        <NuxtLink to="/sponsoren" class="motion-link text-dark hover:text-accentdark">Sponsoren</NuxtLink>
+      <nav class="hidden items-center gap-1 text-sm font-semibold lg:flex">
+        <NuxtLink
+          v-for="item in navItems"
+          :key="item.to"
+          :to="item.to"
+          class="motion-link rounded-md px-3 py-2 transition-colors"
+          :class="isActive(item.to) ? 'bg-primary/10 text-primary' : 'text-dark hover:bg-primary/5 hover:text-accentdark'"
+        >
+          {{ item.label }}
+        </NuxtLink>
       </nav>
 
       <a
@@ -29,5 +33,22 @@
     </div>
   </header>
 </template>
+
+<script setup lang="ts">
+const route = useRoute()
+
+const navItems = [
+  { to: '/', label: 'Home' },
+  { to: '/vision', label: 'Vision' },
+  { to: '/price', label: 'Preise' },
+  { to: '/location', label: 'Location' },
+  { to: '/sponsoren', label: 'Sponsoren' }
+]
+
+const isActive = (path: string) => {
+  if (path === '/') return route.path === '/'
+  return route.path.startsWith(path)
+}
+</script>
 
 

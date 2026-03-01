@@ -1,26 +1,29 @@
 <template>
-  <div class="relative pb-20 md:pb-0">
+  <div class="relative pb-16 lg:pb-0">
     <SplashScreen v-if="showSplash" @close="showSplash = false" />
 
     <!-- Hauptinhalt -->
     <NuxtPage />
 
-    <!-- Mobile Bottom-Navigation -->
-    <nav class="fixed inset-x-0 bottom-0 z-[60] border-t border-primary/20 bg-white/95 backdrop-blur md:hidden">
-      <div class="mx-auto max-w-6xl px-2 py-2">
-        <div class="grid grid-cols-5 gap-2">
-          <NuxtLink
-            v-for="item in mobileNavItems"
-            :key="item.to"
-            :to="item.to"
-            class="rounded-lg border px-2 py-2 text-center text-[11px] font-semibold transition-colors"
-            :class="isActive(item.to)
-              ? 'border-primary bg-primary text-white'
-              : 'border-primary/20 bg-white text-primary'"
+    <!-- Mobile Bottom-Navigation – schlank, nicht klobig -->
+    <nav class="fixed inset-x-0 bottom-0 z-[60] border-t border-primary/10 bg-white/90 backdrop-blur-sm lg:hidden">
+      <div class="mx-auto flex max-w-6xl items-center justify-around px-3 py-2">
+        <NuxtLink
+          v-for="item in mobileNavItems"
+          :key="item.to"
+          :to="item.to"
+          class="flex-1 py-1.5 text-center text-[11px] font-medium transition-colors"
+          :class="isActive(item.to)
+            ? 'text-primary'
+            : 'text-muted hover:text-dark'"
+        >
+          <span
+            class="block rounded-md px-2 py-1"
+            :class="isActive(item.to) ? 'bg-primary/10' : ''"
           >
             {{ item.label }}
-          </NuxtLink>
-        </div>
+          </span>
+        </NuxtLink>
       </div>
     </nav>
   </div>
