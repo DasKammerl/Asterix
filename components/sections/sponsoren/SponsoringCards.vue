@@ -37,33 +37,33 @@
                 <span v-else class="text-muted">–</span>
               </td>
             </tr>
-            <!-- Letzte 3 Zeilen: gemeinsam markiert, mit abwechselndem Muster -->
-            <tr class="border-t-2 border-primary/20 bg-primary/5 font-medium">
-              <td class="p-3 text-dark sm:p-4">Mindestlaufzeit</td>
+            <!-- Letzte 3 Zeilen: nur Trennlinie, Rest wie oben -->
+            <tr class="border-t-2 border-primary/25 font-medium">
+              <td class="border-t border-primary/10 p-3 text-dark sm:p-4">Mindestlaufzeit</td>
               <td
                 v-for="plan in plans"
                 :key="plan.id"
-                class="p-3 text-center text-muted sm:p-4"
+                class="border-t border-primary/10 p-3 text-center text-muted sm:p-4"
               >
                 {{ plan.minimumTerm }}
               </td>
             </tr>
-            <tr class="bg-primary/10 font-medium">
-              <td class="p-3 text-dark sm:p-4">Anzahl Sponsoren</td>
+            <tr :class="tableRows.length % 2 === 1 ? 'bg-altbg/40' : ''" class="font-medium">
+              <td class="border-t border-primary/10 p-3 text-dark sm:p-4">Anzahl Sponsoren</td>
               <td
                 v-for="plan in plans"
                 :key="plan.id"
-                class="p-3 text-center text-muted sm:p-4"
+                class="border-t border-primary/10 p-3 text-center text-muted sm:p-4"
               >
                 {{ plan.sponsorCount ?? '–' }}
               </td>
             </tr>
-            <tr class="bg-primary/5 font-medium">
-              <td class="p-3 text-dark sm:p-4">Preis</td>
+            <tr class="font-medium">
+              <td class="border-t border-primary/10 p-3 text-dark sm:p-4">Preis</td>
               <td
                 v-for="plan in plans"
                 :key="plan.id"
-                class="p-3 text-center font-bold text-primary sm:p-4"
+                class="border-t border-primary/10 p-3 text-center font-bold text-primary sm:p-4"
               >
                 {{ plan.price }}
               </td>
@@ -147,7 +147,6 @@ const tableRows = [
   { label: 'Logo in der Halle', values: [true, true, true, true, true] },
   { label: 'Logo auf der Website', values: [false, true, true, true, true] },
   { label: 'Sponsorenschild', values: ['30 × 20 cm', '40 × 30 cm', '60 × 40 cm', '80 × 60 cm', '100 × 70 cm'] },
-  { label: 'Sichtbarkeit Halle & Website', values: [false, true, true, true, true] },
   { label: 'Hohe Sichtbarkeit / Premium-Präsenz', values: [false, false, false, true, true] },
   { label: 'Eigene Challenge', values: [false, false, false, true, true] },
   { label: 'Namenszusatz der Halle', values: [false, false, false, false, true] },
