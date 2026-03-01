@@ -3,59 +3,91 @@
     <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
       <p class="text-xs font-bold uppercase tracking-[0.2em] text-accentdark">Partnerschaftsklassen</p>
       <h2 class="mt-3 text-3xl font-bold text-dark sm:text-4xl">Sponsoring-Pakete</h2>
-      <!-- Pakete gleichmäßig nebeneinander, ganzer Inhalt sichtbar -->
-      <div class="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
-        <article
-          v-for="(plan, index) in plans"
-          :key="plan.id"
-          class="flex min-h-0 min-w-0 flex-col overflow-hidden rounded-2xl border border-primary/15 bg-white shadow-md transition-all duration-300 hover:border-primary/30 hover:shadow-lg"
-        >
-          <!-- Kopfzeile mit Paketfarbe, oben abgerundet -->
-          <div
-            class="shrink-0 rounded-t-2xl px-4 py-3.5 text-white sm:px-5 sm:py-4"
-            :class="plan.headerBg"
-          >
-            <h3 class="text-base font-bold leading-tight sm:text-lg">{{ plan.title }}</h3>
-            <p v-if="plan.subtitle" class="mt-0.5 text-xs font-medium opacity-95 sm:text-sm">{{ plan.subtitle }}</p>
-          </div>
 
-          <div class="flex min-h-0 flex-1 flex-col p-4 sm:p-5">
-            <ul class="space-y-1.5 text-sm text-muted sm:space-y-2">
-              <li
-                v-for="(feature, i) in plan.features"
-                :key="i"
-                class="flex items-start gap-2 leading-snug"
+      <div class="mt-8 overflow-x-auto rounded-2xl border border-primary/15 bg-white shadow-md">
+        <table class="w-full min-w-[640px] border-collapse text-left text-sm">
+          <thead>
+            <tr>
+              <th class="bg-altbg/80 p-3 font-semibold text-dark sm:p-4">Eigenschaft</th>
+              <th
+                v-for="plan in plans"
+                :key="plan.id"
+                class="p-3 text-center font-bold text-white sm:p-4"
+                :class="plan.headerBg"
               >
-                <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                <span v-html="feature" class="break-words" />
-              </li>
-            </ul>
-            <!-- Preis, Laufzeit und Button gemeinsam am unteren Rand, unten abgerundet – gleiche Höhe bei allen -->
-            <div
-              class="mt-auto rounded-b-2xl bg-altbg px-4 py-4 sm:px-5 sm:py-5 -mx-4 -mb-4 sm:-mx-5 sm:-mb-5"
-              :class="{ 'mt-3': index === plans.length - 1 }"
+                {{ plan.title }}
+                <p v-if="plan.subtitle" class="mt-0.5 text-xs font-normal opacity-95">{{ plan.subtitle }}</p>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="(row, rowIndex) in tableRows"
+              :key="row.label"
+              :class="rowIndex % 2 === 1 ? 'bg-altbg/40' : ''"
             >
-              <!-- Fester Platz für 1–2 Zeilen, damit der Block überall gleich hoch ist -->
-              <div class="min-h-[2.75rem]">
-                <p v-if="plan.sponsorCount" class="whitespace-nowrap text-sm font-semibold text-dark">
-                  {{ plan.sponsorCount }}
-                </p>
-                <p class="whitespace-nowrap text-sm font-semibold text-dark" :class="{ 'mt-0.5': plan.sponsorCount }">
-                  {{ plan.minimumTerm }}
-                </p>
-              </div>
-              <p class="mt-1 text-lg font-extrabold text-primary sm:text-xl">{{ plan.price }}</p>
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSc0Dp8SmKTix6MK79pxjOoW1CYwl-pKZnurHXj1jk3ChH6rtA/viewform?pli=1"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="mt-4 block w-full rounded-xl bg-primary px-4 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-accentdark"
+              <td class="border-t border-primary/10 p-3 font-medium text-dark sm:p-4">{{ row.label }}</td>
+              <td
+                v-for="(cell, colIndex) in row.values"
+                :key="plans[colIndex].id"
+                class="border-t border-primary/10 p-3 text-center sm:p-4"
               >
-                Paket anfragen
-              </a>
-            </div>
-          </div>
-        </article>
+                <span v-if="cell === true" class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/20 text-primary" aria-hidden="true">✓</span>
+                <span v-else-if="cell" class="text-muted" v-html="cell" />
+                <span v-else class="text-muted">–</span>
+              </td>
+            </tr>
+            <!-- Letzte 3 Zeilen: gemeinsam markiert, mit abwechselndem Muster -->
+            <tr class="border-t-2 border-primary/20 bg-primary/5 font-medium">
+              <td class="p-3 text-dark sm:p-4">Mindestlaufzeit</td>
+              <td
+                v-for="plan in plans"
+                :key="plan.id"
+                class="p-3 text-center text-muted sm:p-4"
+              >
+                {{ plan.minimumTerm }}
+              </td>
+            </tr>
+            <tr class="bg-primary/10 font-medium">
+              <td class="p-3 text-dark sm:p-4">Anzahl Sponsoren</td>
+              <td
+                v-for="plan in plans"
+                :key="plan.id"
+                class="p-3 text-center text-muted sm:p-4"
+              >
+                {{ plan.sponsorCount ?? '–' }}
+              </td>
+            </tr>
+            <tr class="bg-primary/5 font-medium">
+              <td class="p-3 text-dark sm:p-4">Preis</td>
+              <td
+                v-for="plan in plans"
+                :key="plan.id"
+                class="p-3 text-center font-bold text-primary sm:p-4"
+              >
+                {{ plan.price }}
+              </td>
+            </tr>
+            <!-- Button -->
+            <tr>
+              <td class="border-t border-primary/15 p-3 sm:p-4"></td>
+              <td
+                v-for="plan in plans"
+                :key="plan.id"
+                class="border-t border-primary/15 p-3 sm:p-4"
+              >
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSc0Dp8SmKTix6MK79pxjOoW1CYwl-pKZnurHXj1jk3ChH6rtA/viewform?pli=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block w-full rounded-xl bg-primary px-3 py-2.5 text-center text-sm font-semibold text-white transition-colors hover:bg-accentdark sm:py-3"
+                >
+                  Paket anfragen
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -68,7 +100,6 @@ const plans = [
     title: 'Supporter',
     subtitle: null,
     headerBg: 'bg-blue-600',
-    features: ['Logo Halle', 'Einzelschild <strong class="text-dark">30 × 20 cm</strong>'],
     sponsorCount: null,
     minimumTerm: 'Keine Mindestlaufzeit',
     price: '500 € / Jahr'
@@ -78,7 +109,6 @@ const plans = [
     title: 'Bronze-Sponsor',
     subtitle: null,
     headerBg: 'bg-amber-700',
-    features: ['Logo Halle & Website', 'Sponsorenschild 40 × 30 cm'],
     sponsorCount: null,
     minimumTerm: 'Mindestlaufzeit 3 Jahre',
     price: '1.100 € / Jahr'
@@ -88,11 +118,6 @@ const plans = [
     title: 'Silber-Sponsor',
     subtitle: null,
     headerBg: 'bg-gray-500',
-    features: [
-      'Sichtbarkeit in Halle & Website',
-      'Sponsorenschild <strong class="text-dark">60 × 40 cm</strong>',
-      'Mitarbeiter: <strong class="text-dark">15% Rabatt</strong>'
-    ],
     sponsorCount: null,
     minimumTerm: 'Mindestlaufzeit 3 Jahre',
     price: '2.225 € / Jahr'
@@ -102,13 +127,6 @@ const plans = [
     title: 'Gold-Sponsor',
     subtitle: 'Premium-Partner',
     headerBg: 'bg-amber-500',
-    features: [
-      'Hohe Sichtbarkeit in Halle & Website',
-      'Eigene Challenge',
-      'Sponsorenschild <strong class="text-dark">80 × 60 cm</strong>',
-      'Werbung auf Bildschirm im Warteraum',
-      'Mitarbeiter: <strong class="text-dark">25% Rabatt</strong>'
-    ],
     sponsorCount: '3–6 Sponsoren',
     minimumTerm: 'Mindestlaufzeit 3 Jahre',
     price: '5.550 € / Jahr'
@@ -118,17 +136,22 @@ const plans = [
     title: 'Namenssponsor',
     subtitle: 'Exklusivpartner',
     headerBg: 'bg-primary',
-    features: [
-      'Namenszusatz der Halle („presented by Firmenname“)',
-      'Größte Präsenz in Halle, App & Website',
-      'Haupt-Challenge',
-      'Premium-Sponsorenschild 100 × 70 cm',
-      'Werbung auf Bildschirm im Warteraum',
-      'Mitarbeiter: <strong class="text-dark">50% Rabatt</strong>'
-    ],
     sponsorCount: '1 exklusiver Sponsor',
     minimumTerm: 'Mindestlaufzeit 3 Jahre',
     price: '12.500 € / Jahr'
   }
+]
+
+// Zeilen = Eigenschaften, Werte pro Paket: true = Häkchen, string = Text, false = –
+const tableRows = [
+  { label: 'Logo in der Halle', values: [true, true, true, true, true] },
+  { label: 'Logo auf der Website', values: [false, true, true, true, true] },
+  { label: 'Sponsorenschild', values: ['30 × 20 cm', '40 × 30 cm', '60 × 40 cm', '80 × 60 cm', '100 × 70 cm'] },
+  { label: 'Sichtbarkeit Halle & Website', values: [false, true, true, true, true] },
+  { label: 'Hohe Sichtbarkeit / Premium-Präsenz', values: [false, false, false, true, true] },
+  { label: 'Eigene Challenge', values: [false, false, false, true, true] },
+  { label: 'Namenszusatz der Halle', values: [false, false, false, false, true] },
+  { label: 'Werbung auf Bildschirm im Warteraum', values: [false, false, false, true, true] },
+  { label: 'Mitarbeiter-Rabatt', values: ['–', '–', '15%', '25%', '50%'] }
 ]
 </script>
